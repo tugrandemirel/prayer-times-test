@@ -22,11 +22,10 @@ class AladhanApiService
     {
         try {
             $response = Http::timeout($this->config['api']['timeout'])
-                ->get(self::BASE_URL . '/timingsByCity', [
-                    'city' => $this->config['default_location']['city'],
-                    'country' => $this->config['default_location']['country'],
-                    'method' => $this->config['calculation_method'],
-                    'date' => $date
+                ->get(self::BASE_URL . '/timings/' . $date, [
+                    'latitude' => $this->config['default_location']['latitude'],
+                    'longitude' => $this->config['default_location']['longitude'],
+                    'method' => $this->config['calculation_method']
                 ]);
 
             if ($response->failed()) {
@@ -46,12 +45,10 @@ class AladhanApiService
     {
         try {
             $response = Http::timeout($this->config['api']['timeout'])
-                ->get(self::BASE_URL . '/calendar', [
-                    'city' => $this->config['default_location']['city'],
-                    'country' => $this->config['default_location']['country'],
-                    'method' => $this->config['calculation_method'],
-                    'month' => $month,
-                    'year' => $year
+                ->get(self::BASE_URL . '/calendar/' . $year . '/' . $month, [
+                    'latitude' => $this->config['default_location']['latitude'],
+                    'longitude' => $this->config['default_location']['longitude'],
+                    'method' => $this->config['calculation_method']
                 ]);
 
             if ($response->failed()) {
@@ -85,4 +82,4 @@ class AladhanApiService
             throw new ApiException('API error: ' . $e->getMessage());
         }
     }
-} 
+}
