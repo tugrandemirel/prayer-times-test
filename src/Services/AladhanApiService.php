@@ -15,9 +15,6 @@ class AladhanApiService
         $this->config = config('prayer-times');
     }
 
-    /**
-     * Get daily prayer times
-     */
     public function getDailyPrayerTimes(string $date): array
     {
         try {
@@ -38,9 +35,6 @@ class AladhanApiService
         }
     }
 
-    /**
-     * Get monthly prayer times
-     */
     public function getMonthlyPrayerTimes(int $month, int $year): array
     {
         try {
@@ -61,9 +55,6 @@ class AladhanApiService
         }
     }
 
-    /**
-     * Get qibla direction
-     */
     public function getQiblaDirection(): float
     {
         try {
