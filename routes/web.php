@@ -1,0 +1,1 @@
+Route::get('/prayer-times', [PrayerTimesController::class, 'index']); 
