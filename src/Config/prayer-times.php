@@ -17,14 +17,8 @@ return [
     |--------------------------------------------------------------------------
     | Calculation Method
     |--------------------------------------------------------------------------
-    | Available methods:
-    | 1 - Muslim World League
-    | 2 - Islamic Society of North America
-    | 3 - Egyptian General Authority of Survey
-    | 4 - Umm Al-Qura University, Makkah
-    | 5 - University of Islamic Sciences, Karachi
     */
-    'calculation_method' => 4,
+    'calculation_method' => 4, // Umm Al-Qura
 
     /*
     |--------------------------------------------------------------------------
@@ -39,25 +33,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Special Days
-    |--------------------------------------------------------------------------
-    */
-    'special_days' => [
-        'ramazan_bayrami' => [
-            'name' => 'Ramazan Bayramı',
-            'date' => '2024-04-10', // Örnek tarih
-            'duration' => 3
-        ],
-        'kurban_bayrami' => [
-            'name' => 'Kurban Bayramı',
-            'date' => '2024-06-16', // Örnek tarih
-            'duration' => 4
-        ],
-        // Diğer özel günler...
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
     | API Configuration
     |--------------------------------------------------------------------------
     */
@@ -66,4 +41,73 @@ return [
         'retry_times' => 3,
         'retry_sleep' => 1000,
     ],
-]; 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Language Settings
+    |--------------------------------------------------------------------------
+    */
+    'language' => [
+        'default' => 'tr',
+        'available' => ['tr', 'en', 'ar'],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Prayer Names Translations
+    |--------------------------------------------------------------------------
+    */
+    'translations' => [
+        'tr' => [
+            'Fajr' => 'İmsak',
+            'Sunrise' => 'Güneş',
+            'Dhuhr' => 'Öğle',
+            'Asr' => 'İkindi',
+            'Maghrib' => 'Akşam',
+            'Isha' => 'Yatsı',
+            'days' => [
+                'Monday' => 'Pazartesi',
+                'Tuesday' => 'Salı',
+                'Wednesday' => 'Çarşamba',
+                'Thursday' => 'Perşembe',
+                'Friday' => 'Cuma',
+                'Saturday' => 'Cumartesi',
+                'Sunday' => 'Pazar'
+            ]
+        ],
+        'en' => [
+            'Fajr' => 'Fajr',
+            'Sunrise' => 'Sunrise',
+            'Dhuhr' => 'Dhuhr',
+            'Asr' => 'Asr',
+            'Maghrib' => 'Maghrib',
+            'Isha' => 'Isha',
+            'days' => [
+                'Monday' => 'Monday',
+                'Tuesday' => 'Tuesday',
+                'Wednesday' => 'Wednesday',
+                'Thursday' => 'Thursday',
+                'Friday' => 'Friday',
+                'Saturday' => 'Saturday',
+                'Sunday' => 'Sunday'
+            ]
+        ],
+        'ar' => [
+            'Fajr' => 'الفجر',
+            'Sunrise' => 'الشروق',
+            'Dhuhr' => 'الظهر',
+            'Asr' => 'العصر',
+            'Maghrib' => 'المغرب',
+            'Isha' => 'العشاء',
+            'days' => [
+                'Monday' => 'الاثنين',
+                'Tuesday' => 'الثلاثاء',
+                'Wednesday' => 'الأربعاء',
+                'Thursday' => 'الخميس',
+                'Friday' => 'الجمعة',
+                'Saturday' => 'السبت',
+                'Sunday' => 'الأحد'
+            ]
+        ]
+    ]
+];
